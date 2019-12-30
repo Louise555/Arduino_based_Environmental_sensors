@@ -2,8 +2,8 @@
 // the breakout was bought here:
 //https://www.ebay.com/itm/MICS-6814-Chip-6814-Carbon-Monoxide-Nitrogen-Oxygen-Compact-Sensor-CO-NO2-NH3/173675327867?hash=item286fdb317b:g:84IAAOSwKM1cBsDE
 // the datasheet/sensor  is from:
-// https://sgx.cdistore.com/datasheets/sgx/1143_datasheet%20mics-6814%20rev%208.pdf
-// The resistance of the sensor Rs. depends on the NO2 level. According to the datasheet you need to connect a load resistance (at least 820 ohms) between the N02 pin
+// https://sgx.cdistore.com/820datasheets/sgx/1143_datasheet%20mics-6814%20rev%208.pdf
+// The resistance of the sensor Rs. depends on the NO2 level. According to the datasheet you need to connect a load resistance (at least 1000 ohms) between the N02 pin
 // we have the voltage divider: 5V-RL-Rs-Gnd. This was done on the breakout. We are reading the voltage across the Rs at pin A0
 // here we read Vs (number between 0 and 1024) and record the number in the SD card. We will copy and paste the Vs in a spreadsheet to calibrate the measurements
 //first we convert Vs into volts (Vs/1024 x 5) then we use  Vs = Rs x 5 /(Rs + RL) and extraxt Rs = Vs RL (5-Vs)
@@ -13,7 +13,7 @@
 // according to the datasheet the concentration is 0.15ppm when Rs=R0. The graph log-log  is then turned to a linear exponential graph.
 // see sensitivity curves we derive. 
 // Rs/R0 is plugged into the exponential function and we get the concentration. 
-// With trial and error we get R0=1000 ohms (datasheet says R0 is between 800 ohms and 1Kohms)
+// With trial and error we get R0=1000 ohms (datasheet says R0 is between 800 ohms and 20Kohms)
 // The log-log graph is true for a humidity of 50% and a temprature of 25C.
 // 
 // recording in a SD card . We record one data every minute for an amount of minutes given by the constant time_minutes
