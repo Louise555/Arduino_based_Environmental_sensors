@@ -3,7 +3,7 @@ Arduino based acquisition systems to monitor air quality -
 
 mq131 -> ozone sensor  from Winsen
 
-MiCS -> NO2 sensor from sensortech
+MiCS6814-> NO2 sensor from sensortech
 
 PM25 -> dust sensor  https://learn.adafruit.com/pm25-air-quality-sensor/overview
 
