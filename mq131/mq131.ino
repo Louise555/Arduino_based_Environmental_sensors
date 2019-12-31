@@ -24,10 +24,10 @@
  * 
  * The steps are:
  * 1) open a new file in the SD card. (source: adafruit) and turn on the LED. record the month and the day.
- * 2) wait for 5 minutes
- * 3) record in the SD card for a number of minutes given by : time_minutes. 
+ * 
+ * 2) record in the SD card for a number of minutes given by : time_minutes. 
  * Before it works properly, the sensor needs to be on for at least 48 hours (preheat time)when new.
- * 4) close the file. Turn off the LED. 
+ * 3) close the file. Turn off the LED. 
  * 
  * In the file we write: i,hour,minute,Rs,tmperature
  * in the header of the file, we write the month and the day.
@@ -51,13 +51,12 @@ const int chipSelect = 10;  // we use pin 10 for chip select
 // the logging file that will be recorded in the SD card.
 File logfile;
 
-unsigned long time_to_read = 300000; // time to preheat the sensor before starting recording. 5 minutes. 
-unsigned long time_start = 0;
+
 
 float Rs; // resistance of the sensor.
 int valueRL = 10000; // resistance of the load. we read the voltage A0 across this load. The resistance is between A0 and Gnd. 
 
-unsigned long time_minutes=10; // numbers of minutes we will record in the SD card
+unsigned long time_minutes=60; // numbers of minutes we will record in the SD card
 
 float my_hour; // keeping track of the time with the RTC
 float my_minute; //
@@ -128,7 +127,6 @@ void setup() {
 void loop() {
 
 
-  if ((millis() - time_start) < time_to_read) {while(1);} // wait for 5 minutes
     for (i=0;i<time_minutes;i++) { // run for a few minutes and record in the SD card
     logfile.print(i);
     logfile.print(',');
