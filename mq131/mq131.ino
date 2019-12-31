@@ -10,6 +10,8 @@
  * https://github.com/ostaquet/Arduino-MQ131-driver/tree/master/datasheet
  * To tune the calibration, one can use a professional sensor monitor or the website:  https://breezometer.com (not as precise)
  * 
+ * Note: The sensor needs a steady and regulated 5V voltage +/- 0.1V
+ * 
  * The sensor neews to be heated by a constant, regulated 5V power source. The low concentration sensor is easily fried. 
  * 
  * We have extended the circuitry with a datta-logger by adafruit. https://learn.adafruit.com/adafruit-data-logger-shield/wiring-and-config
@@ -126,7 +128,7 @@ void setup() {
 void loop() {
 
 
-  if ((millis() - time_start) >= time_to_read) { // wait for 5 minutes
+  if ((millis() - time_start) < time_to_read) {while(1);} // wait for 5 minutes
     for (i=0;i<time_minutes;i++) { // run for a few minutes and record in the SD card
     logfile.print(i);
     logfile.print(',');
@@ -158,7 +160,7 @@ void loop() {
         logfile.close(); // close file 
         Serial.println("done");
         while(1);
-  }
+  
 
 }
 void initADC(void) {
