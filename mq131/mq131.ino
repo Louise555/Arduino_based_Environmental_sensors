@@ -56,12 +56,12 @@ File logfile;
 float Rs; // resistance of the sensor.
 int valueRL = 10000; // resistance of the load. we read the voltage A0 across this load. The resistance is between A0 and Gnd. 
 
-unsigned long time_minutes=60; // numbers of minutes we will record in the SD card
+unsigned long time_minutes=720; // numbers of minutes we will record in the SD card
 
 float my_hour; // keeping track of the time with the RTC
 float my_minute; //
 
-byte i = 0;
+unsigned long i = 0;
 byte temp = 17; // temperature in celcius. Can be changed later. 
 
 void setup() {
