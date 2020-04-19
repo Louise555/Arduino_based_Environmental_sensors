@@ -1,6 +1,4 @@
 // https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor/arduino-code
-// to test the sensor and find the baseline numbers.
-// report those numbers in the other code
 
 #include <Wire.h>
 #include "Adafruit_SGP30.h"
