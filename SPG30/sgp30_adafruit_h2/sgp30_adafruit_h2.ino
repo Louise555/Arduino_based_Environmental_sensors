@@ -2,22 +2,16 @@
 // tempeature sensor does not work. I supposed temperature of 15C to be modified
 // 5/2/19 humidity is 50%
 // number_data is the nubmer of data to collect. 
-// I removed the temperature sensor because it competes with the sensor for current. 
 // If the sensor is not used for a few days you need to check the baselines number.
 // for that run the test code by adafruit https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor/arduino-code
 // spg30_adafruit.ino   the 4/19 I found ****Baseline values: eCO2: 0x96C1 & TVOC: 0x9047
-// finally got the kit C02 (sgp30 from adafruit) and the temperature to work at the same time and for to record the data in the SD card.
-// had to make some change in the code.
 // first make sure there is a connection between the ICPS headers (for SPI) between arduino and the shield. Otherwise, they say to flip the shield and make a path for SPI.
 // arduino uno has SPI (for SD card)  at 10 (slave select) 11, 12 , 13  (clck).   I2C (for clock and sensor spg30) uses A4 and A5 for arduino R3
-// temperature sensor TMT36 uses A0
-// Then I read  he temperature once in setup() . So I don't start the SD card, the clock, the C02 until temperature is read.
-// temperature is read for the C02 sensor. I set humidity to 50%.
-//
+
+// output: 
 // TVOC 969 ppb eCO2 1340 ppm example of reading
 
 // There is now an LED that turns on when the loop starts and turn off when we stop recording (90 data).
-// I un commented lines to include temperature and humidity to improve the Co2 sensor as recommended by adafruit.
 
 // the sensor for C02  SGP30  and organic matter comes from:
 // https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor/arduino-code
