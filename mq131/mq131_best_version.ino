@@ -1,23 +1,30 @@
 
 /* runs for 40 minutes
- * 12/29/19  Veronique Lankar - Yelda Balkir - Manhattan College/
+ * 12/29/19  Dr. Veronique Lankar - 
+ * measures the resistance of the sensor mq131 and log it in a SD card along with the time and index
+ * we use the datalogger from adafruit. It keeps tracks of the date / time and has a SD card. 
+ *
  * The mq131 sensor was bought from the manufacturer Winsen. The datasheet can be found here:https://github.com/ostaquet/Arduino-MQ131-driver/tree/master/datasheet
  * The connections for the sensors are explained in the datasheet. The code works for both the low and high concentration sensor
- * We have a load resistance RL of 10K (connected to pins 1,3 of the sensor (see schematic for the connections)
+ * We have a load resistance RL of 10K (connected to pins 1,3 of the sensor (see schematic for the connections))
  * The code measures and records the voltage across RL and compute Rs, the resistance of the sensor. The concentration of ozone depends on Rs.
- * The calinration is not done by the code is done in a spreadhsset (see attachment)
- * So the code only focuses on recording Rs. The calibration is based on the sensitive curves deduced from the datasheet. The sensitivity cuves can be found here:
+ * The calibration is not done by the code is done in a spreadsheet (see attachment)
+ * So the code only focuses on recording Rs. The calibration is based on the sensitive curves deduced from the datasheet. 
+ The sensitivity cuves can be found here:
  * https://github.com/ostaquet/Arduino-MQ131-driver/tree/master/datasheet
- * To tune the calibration, one can use a professional sensor monitor or the website:  https://breezometer.com (not as precise)
+ * To tune we used a professional sensor monitor but the calibration will depend on the unit you buy.
+ 
+ * Note: The sensor needs a steady and regulated 5V voltage +/- 0.1V. It is important. You get the best results
+ if you power Arudino with a charger (phone) or battery. 
  * 
- * Note: The sensor needs a steady and regulated 5V voltage +/- 0.1V
+ * The sensor needs a warm up time of about 10-20 min. 
+ * We used the high concentration sensor and not the low concentration one. We tested it against a ozone monitor and it
+ * still works for low concentration. The low concentration one was too fragile.
  * 
- * The sensor neews to be heated by a constant, regulated 5V power source. The low concentration sensor is easily fried. 
- * 
- * We have extended the circuitry with a datta-logger by adafruit. https://learn.adafruit.com/adafruit-data-logger-shield/wiring-and-config
+ * We have extended the circuitry with a data-logger by adafruit. https://learn.adafruit.com/adafruit-data-logger-shield/wiring-and-config
  * The data-logger includes a SD card and a Real Time Clock powered by a 3V battery. It keeps track of time hour and minutes. 
  * To reset the time uncomment :   rtc.adjust(DateTime(F(__DATE__), F(__TIME__))); Once the time is set, comment the line.
- * The data-logger uses the pins A4 and A5 for the clock (Serial bus I2C used). The pins 10,11,12,13 areused by the SD card to record the measurements in a file (Serial bus SPI)
+ * The data-logger uses the pins A4 and A5 for the clock (Serial bus I2C used). The pins 10,11,12,13 are used by the SD card to record the measurements in  the SD card (Serial bus SPI)
 *  we can not use the pins for other tasks.
  * 
  * We used ditigal pin 3 to signal when the system is recording in the SD card. When it is off, the recording is done.
@@ -26,16 +33,16 @@
  * 1) open a new file in the SD card. (source: adafruit) and turn on the LED. record the month and the day.
  * 
  * 2) record in the SD card for a number of minutes given by : time_minutes. 
- * Before it works properly, the sensor needs to be on for at least 48 hours (preheat time)when new.
+ * 
  * 3) close the file. Turn off the LED. 
  * 
  * In the file we write: i,hour,minute,Rs,tmperature
  * in the header of the file, we write the month and the day.
  * 
- * Here we temperature is given by the variable temp (17C by default). In the spreadsheet, it can be easily replaced by another temperature.
- * so the 17 is a place holder. 
- * The low concentration sensor ddidn't work well with a temperature sensor. But a temperature sensor TMP36 can be added with a high concentration sensor.
- * 
+ * Here the temperature is set to 17C.  In the spreadsheet, it can be easily replaced by another temperature.
+ * so the 17 is a place holder. You can add a temp/humidity sensor to the setup. However, mq131 is very demanding in current.
+ * so we decided not to overload the kit with another sensor. 
+ *
  * Before recording the Rs, 16 measurements are taken and averaged out (source: Elliot Williams. Programming AVR). In an effort to remove noise. 
  */
  
@@ -121,7 +128,7 @@ void setup() {
   logfile.print(',');
   logfile.println(now.day(), DEC); // we write the day
   
-
+initADC(); // start the analog to digital converter 
 }
 
 void loop() {
@@ -135,7 +142,7 @@ void loop() {
     logfile.print(',');
     logfile.print(now.minute(), DEC);
     logfile.print(',');
-    initADC(); // start the analog to digital converter 
+   
     Rs = float(oversample16x()); // we take 16 measurements and average out
     Rs = (Rs / 1024.0) * 5.0; // convert the digital number (0-1024) to volts. Arduino has a 10-bits analog to digital converter. 
     Rs = (5.0 / Rs - 1.0) * valueRL; // Compute the resistance of the sensor.
