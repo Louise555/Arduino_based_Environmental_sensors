@@ -1,25 +1,22 @@
-//12/1/19 code to read the NO2 level. The file includes month/day then each field: time,hour, Vs (0-1023)
+// Note: if you want to test the module first. All you have to do is to read the voltage at the NO2 pin of the module- Connect the NO2 pin of the module to the A0 pin of arduino.
+// 12/1/19 - Veronique Lankar 
+//code to read the NO2 level. We use the data-logger from adafruit and we write: month/day then each field: time,hour, Vs (0-1023)
+// the module/breakout is easy to use. We read Vs (voltage across the resistance of the sensor) at the pin A0 of Arduino. 
+// the module we use includes the sensor and some circuitry (caps and the circuit 5V - RL - Rs - Gnd). Rs is the resistance of the sensor. RL is a load resistance. 
+// we don't have to worry about the circuitry. 
+// The calibration to turn Vs to Rs is done in a spreadsheet. 
 // the breakout was bought here:
 //https://www.ebay.com/itm/MICS-6814-Chip-6814-Carbon-Monoxide-Nitrogen-Oxygen-Compact-Sensor-CO-NO2-NH3/173675327867?hash=item286fdb317b:g:84IAAOSwKM1cBsDE
 // the datasheet/sensor  is from:
 // https://sgx.cdistore.com/820datasheets/sgx/1143_datasheet%20mics-6814%20rev%208.pdf
-// The resistance of the sensor Rs. depends on the NO2 level. According to the datasheet you need to connect a load resistance (at least 1000 ohms) between the N02 pin
-// we have the voltage divider: 5V-RL-Rs-Gnd. This was done on the breakout. We are reading the voltage across the Rs at pin A0
-// here we read Vs (number between 0 and 1024) and record the number in the SD card. We will copy and paste the Vs in a spreadsheet to calibrate the measurements
-//first we convert Vs into volts (Vs/1024 x 5) then we use  Vs = Rs x 5 /(Rs + RL) and extraxt Rs = Vs RL (5-Vs)
 // 
-// The calibration is done in a separate spreadsheet.
-// The datasheet gives Rs/R0 as a function of the concentration in ppm in a log-log scale. The sensitivity is 0.05-10ppm 
-// according to the datasheet the concentration is 0.15ppm when Rs=R0. The graph log-log  is then turned to a linear exponential graph.
-// see sensitivity curves we derive. 
-// Rs/R0 is plugged into the exponential function and we get the concentration. 
-// With trial and error we get R0=1000 ohms (datasheet says R0 is between 800 ohms and 20Kohms)
-// The log-log graph is true for a humidity of 50% and a temprature of 25C.
+// The calibration is done in a separate spreadsheet where Vs (read at one pin of the module) it turned to Rs. Then to Rs/R0
+// The concentration of NO2 depends on Rs/R0
+// according to the datasheet the concentration is 0.15ppm when Rs=R0. 
 // 
-// recording in a SD card . We record one data every minute for an amount of minutes given by the constant time_minutes
+//  We record one data every minute for an amount of minutes given by the constant time_minutes
 //
-//
-// 10_22_19 We average 16 data and then take the average to remove noise. 
+// 
 // we have a LED at digital 3
 
 //data logger is from from adafruit. https://learn.adafruit.com/adafruit-data-logger-shield/wiring-and-config
@@ -109,7 +106,8 @@ void setup() {
   logfile.print(now.month(), DEC);
   logfile.print(',');
   logfile.println(now.day(), DEC);
-
+ 
+   initADC(); // analog to digital converter
 }
 
 void loop() {
@@ -124,7 +122,7 @@ void loop() {
     logfile.print(',');
     logfile.print(now.minute(), DEC);
     logfile.print(',');
-    initADC();
+   
     Vs = float(oversample16x()); // we read Vs as a digital number between 0-1023. It will turned to volts in the spreadsheet. 
 
     Serial.println(Vs); // write Vs
