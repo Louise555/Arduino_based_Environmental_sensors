@@ -1,19 +1,32 @@
 # Arduino_based_Environmental_sensors
-Arduino based acquisition systems to monitor air quality - Environmental Sciences Dept. Manhattan College, NY
+Arduino based acquisition systems to monitor air quality - Veronique Lankar 
 
-mq131 -> ozone sensor from Winsen - https://www.ebay.com/itm/ORIGINAL-Brand-New-Winsen-MQ131-Ozone-Gas-Sensor/281782107363?hash=item419b85bce3:g:NqsAAOSwyQtV3Bxd
+mq131 from Winsen: -https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/mq131(high-concentration)-ver1_4-manual.pdf
+bought here:
+https://www.ebay.com/itm/ORIGINAL-Brand-New-Winsen-MQ131-Ozone-Gas-Sensor/281782107363?hash=item419b85bce3:g:NqsAAOSwyQtV3Bxd
+sensitivity curves:
+https://github.com/ostaquet/Arduino-MQ131-driver
 
-MiCS6814-> NO2 sensor from sensortech - https://www.sgxsensortech.com/content/uploads/2015/02/1143_Datasheet-MiCS-6814-rev-8.pdf
 
-PM25 -> dust sensor https://learn.adafruit.com/pm25-air-quality-sensor/overview (from honeywell)
+MiCS6814 (NO2 sensor) from sensortech : https://www.sgxsensortech.com/content/uploads/2015/02/1143_Datasheet-MiCS-6814-rev-8.pdf
+bought here:
+https://www.ebay.com/itm/MICS-6814-Chip-6814-Carbon-Monoxide-Nitrogen-Oxygen-Compact-Sensor-CO-NO2-NH3/173675327867?hash=item286fdb317b:g:84IAAOSwKM1cBsDE
 
-VELM6075 -> UV sensor  https://learn.adafruit.com/adafruit-veml6075-uva-uvb-uv-index-sensor/overview (from Vishay)
+PM25 (dust sensor) from honeywell sold by Adafruit:
+https://learn.adafruit.com/pm25-air-quality-sensor/overview 
 
-spg30 -> Total Volatile Organic Compound (TVOC) reading and an equivalent carbon dioxide reading (eCO2) 
-https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor (sensor from Sensirion)
+VELM6075 (UV sensor) from Vishay sold by Adafruit:
+https://learn.adafruit.com/adafruit-veml6075-uva-uvb-uv-index-sensor/overview (from Vishay)
 
-Most of them take 20 minutes to collect the data. Except for the UV that takes like one minute. The ozone sensor takes 40 minutes because of warmup time. All of them keep track of the time and date. For the ozone sensor, you need to keep track of the humidity and temperature for calibration (using the website breezometer for example). The CO2/VOC measures the temperature itself but supposes an humidity of 50%. Modify the code to change the humidity. 
+spg30 (CO2/VOC sensor) from Sensirion sold by Adafruit: 
+https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor 
+( Total Volatile Organic Compound (TVOC) reading and an equivalent carbon dioxide reading (eCO2) )
 
+MQ7 (CO sensor) from Winsen: https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-7B%20(Ver1.4)%20-%20Manual.pdf
+bought here:
+https://www.amazon.com/HiLetgo-Carbon-Monoxide-Detection-Sensor/dp/B00LSECY2Y/ref=sr_1_3?dchild=1&keywords=mq7&qid=1588261291&sr=8-3
+explanation for hardware (the module baove needs to be modified): 
+https://www.instructables.com/id/Arduino-CO-Monitor-Using-MQ-7-Sensor/
 
 
 
