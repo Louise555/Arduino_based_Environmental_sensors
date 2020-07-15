@@ -26,7 +26,13 @@ MQ7 (CO sensor) from Winsen: https://www.winsen-sensor.com/d/files/PDF/Semicondu
 bought here:
 https://www.amazon.com/HiLetgo-Carbon-Monoxide-Detection-Sensor/dp/B00LSECY2Y/ref=sr_1_3?dchild=1&keywords=mq7&qid=1588261291&sr=8-3<br/>
 explanation for hardware (the module baove needs to be modified): <br/>
-https://www.instructables.com/id/Arduino-CO-Monitor-Using-MQ-7-Sensor/
+https://www.instructables.com/id/Arduino-CO-Monitor-Using-MQ-7-Sensor/ <br/>
+
+SHT31 (humidity/temperature sensor) from sensirion  sold by adafruit https://www.adafruit.com/product/2857 <br/>
+
+ME2-O2-Ф20 (O2 sensor) from Winsen : https://www.winsen-sensor.com/d/files/PDF/Electrochemical%20Gas%20Sensor/Electrochemical%20Oxygen/ME2-O2-D20%200-25%25%20Manual%20(ver1.2).pdf <br/>
+module/code developed by: https://wiki.seeedstudio.com/Grove-Gas_Sensor-O2/<br/>
+bought here: https://www.amazon.com/Air-Quality-Sensors-Grove-Sensor/dp/B01AUVL8HW
 
 
 
