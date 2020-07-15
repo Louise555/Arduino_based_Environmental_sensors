@@ -25,7 +25,7 @@ https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor
 MQ7 (CO sensor) from Winsen: https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-7B%20(Ver1.4)%20-%20Manual.pdf<br/>
 bought here:
 https://www.amazon.com/HiLetgo-Carbon-Monoxide-Detection-Sensor/dp/B00LSECY2Y/ref=sr_1_3?dchild=1&keywords=mq7&qid=1588261291&sr=8-3<br/>
-explanation for hardware (the module baove needs to be modified): 
+explanation for hardware (the module baove needs to be modified): <br/>
 https://www.instructables.com/id/Arduino-CO-Monitor-Using-MQ-7-Sensor/
 
 
