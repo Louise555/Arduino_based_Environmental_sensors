@@ -1,30 +1,30 @@
 # Arduino_based_Environmental_sensors
 Arduino based acquisition systems to monitor air quality - Veronique Lankar 
 
-mq131 from Winsen: -https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/mq131(high-concentration)-ver1_4-manual.pdf <br/><br/>
+mq131 from Winsen: -https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/mq131(high-concentration)-ver1_4-manual.pdf <br/>
 bought here:
-https://www.ebay.com/itm/ORIGINAL-Brand-New-Winsen-MQ131-Ozone-Gas-Sensor/281782107363?hash=item419b85bce3:g:NqsAAOSwyQtV3Bxd
+https://www.ebay.com/itm/ORIGINAL-Brand-New-Winsen-MQ131-Ozone-Gas-Sensor/281782107363?hash=item419b85bce3:g:NqsAAOSwyQtV3Bxd<br/>
 sensitivity curves:
-https://github.com/ostaquet/Arduino-MQ131-driver
+https://github.com/ostaquet/Arduino-MQ131-driver<br/>
 
 
-MiCS6814 (NO2 sensor) from sensortech : https://www.sgxsensortech.com/content/uploads/2015/02/1143_Datasheet-MiCS-6814-rev-8.pdf
+MiCS6814 (NO2 sensor) from sensortech : https://www.sgxsensortech.com/content/uploads/2015/02/1143_Datasheet-MiCS-6814-rev-8.pdf<br/>
 bought here:
-https://www.ebay.com/itm/MICS-6814-Chip-6814-Carbon-Monoxide-Nitrogen-Oxygen-Compact-Sensor-CO-NO2-NH3/173675327867?hash=item286fdb317b:g:84IAAOSwKM1cBsDE
+https://www.ebay.com/itm/MICS-6814-Chip-6814-Carbon-Monoxide-Nitrogen-Oxygen-Compact-Sensor-CO-NO2-NH3/173675327867?hash=item286fdb317b:g:84IAAOSwKM1cBsDE<br/>
 
 PM25 (dust sensor) from honeywell sold by Adafruit:
-https://learn.adafruit.com/pm25-air-quality-sensor/overview 
+https://learn.adafruit.com/pm25-air-quality-sensor/overview <br/>
 
 VELM6075 (UV sensor) from Vishay sold by Adafruit:
-https://learn.adafruit.com/adafruit-veml6075-uva-uvb-uv-index-sensor/overview (from Vishay)
+https://learn.adafruit.com/adafruit-veml6075-uva-uvb-uv-index-sensor/overview (from Vishay)<br/>
 
 spg30 (CO2/VOC sensor) from Sensirion sold by Adafruit: 
 https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor 
-( Total Volatile Organic Compound (TVOC) reading and an equivalent carbon dioxide reading (eCO2) )
+( Total Volatile Organic Compound (TVOC) reading and an equivalent carbon dioxide reading (eCO2) )<br/>
 
-MQ7 (CO sensor) from Winsen: https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-7B%20(Ver1.4)%20-%20Manual.pdf
+MQ7 (CO sensor) from Winsen: https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-7B%20(Ver1.4)%20-%20Manual.pdf<br/>
 bought here:
-https://www.amazon.com/HiLetgo-Carbon-Monoxide-Detection-Sensor/dp/B00LSECY2Y/ref=sr_1_3?dchild=1&keywords=mq7&qid=1588261291&sr=8-3
+https://www.amazon.com/HiLetgo-Carbon-Monoxide-Detection-Sensor/dp/B00LSECY2Y/ref=sr_1_3?dchild=1&keywords=mq7&qid=1588261291&sr=8-3<br/>
 explanation for hardware (the module baove needs to be modified): 
 https://www.instructables.com/id/Arduino-CO-Monitor-Using-MQ-7-Sensor/
 
