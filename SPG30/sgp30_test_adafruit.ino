@@ -1,4 +1,9 @@
 // https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor/arduino-code
+// code by adafruit
+// there is no humidity/temperature sensor. 
+// if you have the temperature,humidity change the variables in the loop:
+// float temperature = 17.1; // [°C]
+//  float humidity = 50; // [%RH]
 
 #include <Wire.h>
 #include "Adafruit_SGP30.h"
@@ -42,7 +47,7 @@ int counter = 0;
 void loop() {
   // If you have a temperature /  sensor, you can set the absolute humidity to enable the humditiy compensation for the air quality signals
   float temperature = 17.1; // [°C]
-  float humidity = 45.2; // [%RH]
+  float humidity = 50; // [%RH]
   sgp.setHumidity(getAbsoluteHumidity(temperature, humidity));
 
   if (! sgp.IAQmeasure()) {
