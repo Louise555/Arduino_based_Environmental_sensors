@@ -8,7 +8,6 @@ https://www.ebay.com/itm/ORIGINAL-Brand-New-Winsen-MQ131-Ozone-Gas-Sensor/281782
 sensitivity curves:<br/>
 https://github.com/ostaquet/Arduino-MQ131-driver<br/>
 
-
 ### MiCS6814 (NO2 sensor) from sensortech :<br/>
 https://www.sgxsensortech.com/content/uploads/2015/02/1143_Datasheet-MiCS-6814-rev-8.pdf<br/>
 bought here:<br/>
@@ -24,8 +23,9 @@ https://learn.adafruit.com/adafruit-veml6075-uva-uvb-uv-index-sensor/overview (f
 https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor <br/>
 ( Total Volatile Organic Compound (TVOC) reading and an equivalent carbon dioxide reading (eCO2) )<br/>
 
-### MQ7 (CO sensor) from Winsen: https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-7B%20(Ver1.4)%20-%20Manual.pdf<br/>
-bought here:
+### MQ7 (CO sensor) from Winsen:<br/>
+https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/MQ-7B%20(Ver1.4)%20-%20Manual.pdf<br/>
+bought here:<br/>
 https://www.amazon.com/HiLetgo-Carbon-Monoxide-Detection-Sensor/dp/B00LSECY2Y/ref=sr_1_3?dchild=1&keywords=mq7&qid=1588261291&sr=8-3<br/>
 explanation for hardware (the module baove needs to be modified): <br/>
 https://www.instructables.com/id/Arduino-CO-Monitor-Using-MQ-7-Sensor/ <br/>
