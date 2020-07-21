@@ -3,6 +3,7 @@
  * 12/29/19  Dr. Veronique Lankar - 
  * measures the resistance of the sensor mq131 and log it in a SD card along with the time and index
  * we use the datalogger from adafruit. It keeps tracks of the date / time and has a SD card. 
+ * each to time the system is reset, a new file is opnened. (see code by adafruit for the datalogger)
  *
  * The mq131 sensor was bought from the manufacturer Winsen. The datasheet can be found here:https://github.com/ostaquet/Arduino-MQ131-driver/tree/master/datasheet
  * The connections for the sensors are explained in the datasheet. The code works for both the low and high concentration sensor
