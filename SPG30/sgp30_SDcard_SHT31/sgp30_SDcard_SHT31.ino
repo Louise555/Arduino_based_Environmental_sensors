@@ -1,5 +1,6 @@
 // record in the SD card the date/time then a series of data  VOC (ppb), CO2(ppm) then the temperature and humidity. 
-//  TVOC 969 ppb eCO2 1340 ppm is an example of reading
+//  TVOC 969 ppb eCO2 1340 ppm is an example of reading. Here we record 20 data in the SD card.
+// each to time the system is reset, a new file is opnened. (see code by adafruit for the datalogger)
 //
 // the sensor for C02  SGP30  and organic matter comes from:
 // https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor/arduino-code
@@ -18,6 +19,7 @@
 // number_data is the nubmer of data to collect. 
 // the module  for VOC,CO2 is developed for adafruit. 
 //  https://learn.adafruit.com/adafruit-sgp30-gas-tvoc-eco2-mox-sensor/arduino-code
+//
 // The data logger is also from adafruit.
 // https://learn.adafruit.com/adafruit-data-logger-shield
 // The shield uses the SPI protocol for the  SD card  at 10 (slave select) 11, 12 , 13  (clck). The clock uses   I2C  -> pins A4 and A5 
