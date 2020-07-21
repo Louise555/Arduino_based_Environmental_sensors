@@ -1,5 +1,5 @@
 
-//simple code to test the row sensor mq131. It only output Rs the resistance of the sensor. The circuitry includes a load resistance RL. (5V -( Rs ) - RL - Gnd)
+//simple code to test the rw sensor mq131. It only output Rs the resistance of the sensor. The circuitry includes a load resistance RL. (5V -( Rs ) - RL - Gnd)
 // (Rs) is the sensor. 
 // We read the voltage across RL and turns it to Rs/ You can copy Rs and paste it in the excel sheet I have prepared. Copy the output in the
 //column Rs. You also need to enter the right temperature in the temperature column. The concentration of ozone is read at the end as a function of
