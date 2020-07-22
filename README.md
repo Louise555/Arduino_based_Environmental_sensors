@@ -36,7 +36,7 @@ https://www.winsen-sensor.com/d/files/PDF/Electrochemical%20Gas%20Sensor/Electro
 module/code developed by: https://wiki.seeedstudio.com/Grove-Gas_Sensor-O2/<br/>
 bought here: https://www.amazon.com/Air-Quality-Sensors-Grove-Sensor/dp/B01AUVL8HW <br/> <br/> <br/>
 
-### For all the sensors we use the datalogging shield by adafruit:<br/>
+### datalogger test codes - For all the sensors we use the datalogging shield by adafruit:<br/>
 https://www.adafruit.com/product/1141<br/>
 
 ### for some sensors we use the temp/humidity sensor (by sensirion) arranged and sold by adafruit:<br/>
