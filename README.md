@@ -37,7 +37,7 @@ module/code developed by: https://wiki.seeedstudio.com/Grove-Gas_Sensor-O2/<br/>
 bought here: https://www.amazon.com/Air-Quality-Sensors-Grove-Sensor/dp/B01AUVL8HW <br/> <br/> <br/>
 
 ### datalogger test codes - For all the sensors we use the datalogging shield by adafruit:<br/>
-https://www.adafruit.com/product/1141<br/>
+https://learn.adafruit.com/adafruit-data-logger-shield<br/>
 
 ### for some sensors we use the temp/humidity sensor (by sensirion) arranged and sold by adafruit:<br/>
 SHT31 (humidity/temperature sensor) from sensirion  sold by adafruit https://www.adafruit.com/product/2857 <br/>
