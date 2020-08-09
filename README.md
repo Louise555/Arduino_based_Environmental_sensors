@@ -1,5 +1,8 @@
 # Arduino_based_Environmental_sensors
-Arduino based acquisition systems to monitor air quality - Veronique Lankar 
+Arduino based acquisition systems to monitor air quality - Veronique Lankar <br/>
+
+The guideline to build those Arduino based air quality monitor is found here:
+https://leanpub.com/arduino_based_environmental_sensors
 
 ### mq131 from Winsen:  <br/>
 -https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/mq131(high-concentration)-ver1_4-manual.pdf <br/>
