@@ -1,7 +1,9 @@
 # Arduino based air quality sensors
 ### Arduino based acquisition systems to monitor air quality - @ Veronique Lankar 2020 <br/>
 
-The guideline to build those Arduino based air quality monitor is found here:                                                                                         https://leanpub.com/arduino_based_environmental_sensors                                                                                                                        Arduino Based Environmental acquisition systems -                                                                                                             ### NO2, O3, CO, CO2/VOC, O2, UV, dust                                                                                                                             ### APPLICATION: monitoring the pollution during the lockdown in NYC – Spring 2020 <br/><br/>
+The guideline to build those Arduino based air quality monitor is found here:                                                                                         https://leanpub.com/arduino_based_environmental_sensors                                                                                                                        Arduino Based Environmental acquisition systems - NO2, O3, CO, CO2/VOC, O2, UV, dust                                                                                            
+### APPLICATION: monitoring the pollution during the lockdown in NYC – Spring 2020 <br/><br/>
+### APPLICATION: monitoring the levels of O2, CO2, VOC in different masks (fabric, surg, N95) <br/><br/>
 
 ### mq131 (O3 sensor) from Winsen:  <br/>
 -https://www.winsen-sensor.com/d/files/PDF/Semiconductor%20Gas%20Sensor/mq131(high-concentration)-ver1_4-manual.pdf <br/>
